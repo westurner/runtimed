@@ -1,0 +1,41 @@
+// For format details, see https://aka.ms/devcontainer.json
+{
+	"name": "runtimed",
+
+	// Build from the local Dockerfile (context = workspace root so we can COPY .github/requirements.txt)
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+
+	"remoteUser": "jovyan",
+
+
+	// Expose the Jupyter server port.
+	"forwardPorts": [8888],
+	"portsAttributes": {
+		"8888": { "label": "Jupyter Lab" }
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				// Rust
+				"rust-lang.rust-analyzer",
+				"vadimcn.vscode-lldb",
+				"tamasfe.even-better-toml",
+				// Python / Jupyter
+				"ms-python.python",
+				"ms-toolsai.jupyter"
+			],
+			"settings": {
+				"[rust]": {
+					"editor.defaultFormatter": "rust-lang.rust-analyzer",
+					"editor.formatOnSave": true
+				},
+				// Run clippy on save instead of the default check.
+				"rust-analyzer.check.command": "clippy"
+			}
+		}
+	}
+}
