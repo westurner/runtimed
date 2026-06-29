@@ -1,3 +1,14 @@
 {
-  "rust-analyzer.linkedProjects": ["./crates/jupyter-zmq-client/Cargo.toml"]
+  "python.defaultInterpreterPath": "/opt/conda/bin/python",
+
+  "rust-analyzer.linkedProjects": [
+    "./crates/runtimelib/Cargo.toml",
+    "./crates/nbformat/Cargo.toml",
+    "./crates/jupyter-protocol/Cargo.toml",
+    "./crates/jupyter-websocket-client/Cargo.toml",
+    "./crates/jupyter-ysync/Cargo.toml",
+    "./crates/jupyter-zmq-client/Cargo.toml",
+    "./crates/mybinder/Cargo.toml",
+    "./crates/ollama-kernel/Cargo.toml",
+  ],
 }
